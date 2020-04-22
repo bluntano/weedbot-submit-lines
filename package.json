@@ -1,0 +1,42 @@
+{
+  "name": "weedbot-submit-line",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron .",
+    "pack": "electron-builder build --dir",
+    "dist": "electron-builder build -w portable:x64"
+  },
+  "author": "Bluntano",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-builder": "22.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  },
+  "electronBuilder": {
+    "build": {
+      "productName": "Weed Bot Submit Line",
+      "appId": "scripter.WeedBotSubmitLine",
+      "win": {
+          "target": ["portable"]
+      },
+      "portable": {
+          "artifactName": "wwedbot_submit-line.exe"
+      },
+      "files": [
+        "app/**/*",
+        "node_modules/**/*",
+        "package.json",
+        "views/**",
+        "public/**"
+      ]
+    }
+  }
+}
