@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
+        <script src="/script.js"></script>
+        <meta charset="utf-8">
+        <title>WeedBot!</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center animated bounceInLeft">
+                <h1>Submit your textline here:</h1>
+            </div>
+            <div class="row justify-content-center animated bounceInRight delayed-1s">
+                <form action="/handle_data" method="post">
+                    <div class="col-sm-8">
+                        <input oninput="checkSubmit()" type="text" id="textline" name="textline">
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="sets" onchange="checkSubmit()" name="sets">
+                            <option value="">Choose one!</option>
+                            <option value="twentyfive_set">less than 25%</option>
+                            <option value="fifty_set">less than 50%</option>
+                            <option value="seventyfive_set">less than 75%</option>
+                            <option value="onehundred_set">less than 100%</option>
+                        </select>
+                    </div>
+                    <div class="row submitSection justify-content-center">
+                        <div class="col submitStatus"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
